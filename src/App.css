@@ -1,0 +1,271 @@
+#root {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.canvas-container {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.furniture-catalog {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 300px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border-radius: 8px;
+  padding: 15px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.furniture-catalog h3 {
+  margin-top: 0;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.category-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.category-filter button {
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.category-filter button.active {
+  background-color: #007bff;
+}
+
+.furniture-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.furniture-item {
+  background-color: #444;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.furniture-item:hover {
+  transform: scale(1.05);
+  background-color: #555;
+}
+
+.furniture-preview {
+  margin-bottom: 8px;
+  border-radius: 3px;
+  min-width: 50px;
+  min-height: 50px;
+}
+
+.furniture-item p {
+  margin: 0;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* Instructions */
+.instructions {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  z-index: 100;
+}
+
+.instructions p {
+  margin: 5px 0;
+}
+
+.dimension-controls {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  pointer-events: all;
+}
+
+.dimension-controls input {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.dimension-controls span {
+  font-size: 14px;
+}
+
+.view-toggle {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+}
+
+.view-toggle-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.view-toggle-btn:hover {
+  background-color: #0056b3;
+}
+
+.mode-indicator {
+  position: absolute;
+  top: 70px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.scene-ui-wrapper {
+  pointer-events: none;
+}
+
+.scene-ui {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.scene-mode-indicator {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  user-select: none;
+}
+
+.rotation-toggle {
+  position: absolute;
+  top: 20px;
+  left: 200px;
+  z-index: 100;
+}
+
+.rotation-toggle-btn {
+  background-color: #444;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.rotation-toggle-btn:hover {
+  background-color: #555;
+  transform: scale(1.1);
+}
+
+.rotation-toggle-btn.active {
+  background-color: #2196f3;
+}
+
+.rotation-toggle-btn svg {
+  width: 24px;
+  height: 24px;
+}
