@@ -1,0 +1,173 @@
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  z-index: 1000;
+}
+
+.sidebar-tools {
+  width: 60px;
+  height: 100%;
+  background-color: #ffffff;
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  gap: 10px;
+}
+
+.tool-button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: none;
+  margin: 0 auto;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.tool-button:hover {
+  background-color: #f0f0f0;
+}
+
+.tool-button.active {
+  background-color: #e3f2fd;
+}
+
+.tool-button img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.sidebar-menu {
+  position: relative;
+  width: 300px;
+  height: 100%;
+  background-color: #ffffff;
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu-header {
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.menu-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #1a73e8;
+}
+
+.menu-header button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0 8px;
+  color: #666;
+}
+
+.menu-content {
+  padding: 12px;
+  height: calc(100% - 73px);
+  overflow-y: auto;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  color: #333;
+}
+
+.menu-item:hover {
+  background-color: #f8f9fa;
+  transform: translateX(4px);
+}
+
+.menu-item.active {
+  background-color: #e3f2fd;
+  color: #1a73e8;
+}
+
+.menu-item img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.menu-item span {
+  font-size: 0.9rem;
+  flex-grow: 1;
+}
+
+.submenu {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background-color: #ffffff;
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.3s ease-out;
+}
+
+.details-menu {
+  left: 200%;
+}
+
+.preview-container {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f8f9fa;
+  margin-bottom: 16px;
+}
+
+.preview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.add-to-scene-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-to-scene-button:hover {
+  background-color: #1557b0;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

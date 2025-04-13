@@ -1,29 +1,31 @@
-import { Canvas } from '@react-three/fiber'
-import { Grid, Environment } from '@react-three/drei'
-import { Suspense } from 'react'
-import Scene from './components/Scene'
-import FurnitureCatalog from './components/FurnitureCatalog'
-import Instructions from './components/Instructions'
-import CustomControls from './components/CustomControls'
-import ViewToggle from './components/ViewToggle'
-import RotationToggle from './components/RotationToggle'
-import InSceneUI from './components/InSceneUI'
-import KeyboardControls from './components/KeyboardControls'
-import usePlannerStore from './store/plannerStore'
-import './App.css'
+import { Canvas } from "@react-three/fiber";
+import { Grid, Environment } from "@react-three/drei";
+import { Suspense } from "react";
+import Scene from "./components/Scene";
+import CustomControls from "./components/CustomControls";
+import RotationToggle from "./components/RotationToggle";
+import InSceneUI from "./components/InSceneUI";
+import KeyboardControls from "./components/KeyboardControls";
+import Sidebar from "./components/Sidebar";
+import Header from "./components/Header";
+import HelpButton from "./components/HelpButton";
+import usePlannerStore from "./store/plannerStore";
+import "./App.css";
 
 function App() {
-  const { viewMode } = usePlannerStore()
-  
+  const { viewMode } = usePlannerStore();
+
   return (
     <div className="app">
       <KeyboardControls />
+      <Sidebar />
+      <Header />
       <div className="canvas-container">
         <Canvas
           shadows
           camera={{
             position: [10, 10, 10],
-            fov: 45
+            fov: 45,
           }}
         >
           <Suspense fallback={null}>
@@ -34,10 +36,10 @@ function App() {
               castShadow
               shadow-mapSize={[1024, 1024]}
             />
-            
+
             {/* Grid helper */}
             <Grid
-              position={[0, -0.01, 0]} 
+              position={[0, -0.01, 0]}
               args={[100, 100]}
               cellSize={1}
               cellThickness={1}
@@ -53,15 +55,13 @@ function App() {
           </Suspense>
           <Environment preset="city" />
         </Canvas>
-        
+
         {/* UI Overlays */}
-        <ViewToggle />
-        {viewMode === '3D' && <RotationToggle />}
-        <Instructions />
-        <FurnitureCatalog />
+        {viewMode === "3D" && <RotationToggle />}
+        <HelpButton />
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

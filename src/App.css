@@ -6,7 +6,8 @@
   overflow: hidden;
 }
 
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -27,6 +28,8 @@ body, html {
   width: 100%;
   height: 100%;
   position: relative;
+  margin-left: 60px;
+  margin-top: 60px;
 }
 
 .logo {
@@ -146,7 +149,7 @@ body, html {
 .instructions {
   position: absolute;
   bottom: 20px;
-  left: 20px;
+  left: 80px;
   background-color: rgba(0, 0, 0, 0.7);
   color: white;
   padding: 10px;
@@ -183,7 +186,7 @@ body, html {
 .view-toggle {
   position: absolute;
   top: 20px;
-  left: 20px;
+  left: 80px;
   z-index: 100;
 }
 
